@@ -121,10 +121,79 @@ fuel_log_frame.place(x=540, y=390)
 fuel_header = Label(text='Fuel Log', font=30) # Fuel Log Header
 fuel_header.place(x=820, y=400)
 
+fuel_added = Label(text='Fuel Added: ', font=18) # Fuel Added
+fuel_added.place(x=660, y=430)
+fuel_added_entry = Entry(root, width=30)
+fuel_added_entry.place(x=770, y=435)
+
+fuel_cost = Label(text='Fuel Cost: ', font=18) # Fuel cost
+fuel_cost.place(x=660, y=470)
+fuel_cost_entry = Entry(root, width=30)
+fuel_cost_entry.place(x=770, y=475)
+
+fuel_odometer_reading = Label(text='Fuel Odometer Reading: ', font=18) # Fuel odometer reading
+fuel_odometer_reading.place(x=660, y=510)
+fuel_odometer_reading_entry = Entry(root, width=20)
+fuel_odometer_reading_entry.place(x=850, y=515)
+
+miles_per_gallon = Label(text='Miles Per Gallon: ', font=18) # Miles Per gallon
+miles_per_gallon.place(x=660, y=550)
+miles_per_gallon_entry = Entry(root, width=15)
+miles_per_gallon_entry.place(x=850, y=555)
+
+cost_per_mile = Label(text='Cost Per Mile: ', font=18) # Cost Per Mile
+cost_per_mile.place(x=660, y=590)
+cost_per_mile_entry = Entry(root, width=15)
+cost_per_mile_entry.place(x=850, y=595)
+
+cost_per_gallon = Label(text='Cost Per Gallon: ', font=18) # Cost Per Gallon
+cost_per_gallon.place(x=660, y=630)
+cost_per_gallon_entry = Entry(root, width=15)
+cost_per_gallon_entry.place(x=850, y=635)
+
+fuel_log_created = Label(text='Fuel Log Created: ', font=18) # Fuel Log Created
+fuel_log_created.place(x=660, y=670)
+fuel_log_created_entry = Entry(root, width=15)
+fuel_log_created_entry.place(x=850, y=675)
+
+fuel_log_updated = Label(text='Fuel Log Updated: ', font=18) # Fuel Log Updated
+fuel_log_updated.place(x=660, y=710)
+fuel_log_updated_entry = Entry(root, width=15)
+fuel_log_updated_entry.place(x=850, y=715)
+
 #Update Maintenance Log
 update_frame = Frame(root, width= 500, height=260) 
 update_frame.place(x=20, y=500)
 update_header = Label(text='Update Logs', font=24)
 update_header.place(x=200, y=520)
+
+clicked = StringVar() # Allows the drop down to activate
+clicked.set("Select Log Type") # Sets a default value to the dropdown
+
+maintenance_items = [
+    "Serivce Shop",
+    "Service Type", 
+    "Service Date",
+    "Service Odometer Reading",
+    "Service_Cost",
+    "Maintenance Interval",
+    "Date Log Created",
+    "Date Log Updated"
+]
+log_type_dropdown = OptionMenu(root, clicked, "User Info", "Vehicle Info", "Maintenance Log", "Fuel Log") # Log Options to tap into
+log_type_dropdown.place(x=190, y=570)
+
+field_dropdown = StringVar() # Field dropdown menu
+field_dropdown.set("Select field type")
+log_field = OptionMenu(root, field_dropdown, *maintenance_items)
+log_field.place(x=190, y=610)
+
+update_label = Label(root, text="Type Update Here: ") # Update entry box
+update_label.place(x=70, y=655)
+update_entry_box = Entry(root)
+update_entry_box.place(x=190, y=660)
+update_button = Button(root, text="Update", bg="darkgreen", fg="white", font=12)
+update_button.place(x=210, y=690)
+
 
 root.mainloop()
