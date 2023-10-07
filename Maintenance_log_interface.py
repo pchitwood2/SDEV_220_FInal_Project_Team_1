@@ -3,11 +3,11 @@ from tkinter import *
 # master window setup
 root = Tk()
 root.title('Vehicle Maintenance Log')
-root.geometry('1200x780') # (width x height)
+root.geometry('1200x840') # (width x height)
 root.config(bg='skyblue')
 
 # User/Vehicle information Frame
-user_frame = Frame(root, width= 500, height=460) # User inforamtion
+user_frame = Frame(root, width= 500, height=480) # User inforamtion
 user_frame.place(x=20, y=20)
 user_header = Label(text='User Info: ', font=24)
 user_header.place(x=40, y=40)
@@ -67,8 +67,16 @@ time_since_last_maintenance.place(x=80, y=425)
 time_since_last_maintenance_entry = Entry(root, width=20)
 time_since_last_maintenance_entry.place(x=320, y=430)
 
+#User/Vehicle Info submit button
+submit_info = Button(root, text="Submit", bg='lightgreen', font=12)
+submit_info.place(x=320, y=460)
+
+#Button to reveiw past User/Vehicle Info
+review_information = Button(root, text="Review Information Logs", bg='beige', font=12)
+review_information.place(x=40, y=460)
+
 # Maintenance log of users vehicle
-maintenance_frame = Frame(root, width=640, height=350)
+maintenance_frame = Frame(root, width=640, height=320)
 maintenance_frame.place(x=540, y=20)
 
 maintenance_header = Label(text='Maintenance Log', font=30) # Maintenance Log Header
@@ -114,58 +122,74 @@ date_log_updated.place(x=560, y=260)
 date_log_updated_entry = Entry(root, width=30)
 date_log_updated_entry.place(x=780, y=265)
 
+# Button to review past maintenance logs
+review_maintenance_log = Button(root, text="Review Maintenance Logs", bg='beige', font=12)
+review_maintenance_log.place(x=560, y=300)
+
+#Button to submit maintenance log
+submit_maintenance = Button(root, text="Submit", bg='lightgreen', font=12)
+submit_maintenance.place(x=780, y=300)
+
 # Frame for Fuel Log
-fuel_log_frame = Frame(root, width=640, height=370)
-fuel_log_frame.place(x=540, y=390)
+fuel_log_frame = Frame(root, width=640, height=400)
+fuel_log_frame.place(x=540, y=420)
 
 fuel_header = Label(text='Fuel Log', font=30) # Fuel Log Header
-fuel_header.place(x=820, y=400)
+fuel_header.place(x=820, y=400+30)
 
 fuel_added = Label(text='Fuel Added: ', font=18) # Fuel Added
-fuel_added.place(x=660, y=430)
+fuel_added.place(x=660, y=430+30)
 fuel_added_entry = Entry(root, width=30)
-fuel_added_entry.place(x=770, y=435)
+fuel_added_entry.place(x=770, y=435+30)
 
 fuel_cost = Label(text='Fuel Cost: ', font=18) # Fuel cost
-fuel_cost.place(x=660, y=470)
+fuel_cost.place(x=660, y=470+30)
 fuel_cost_entry = Entry(root, width=30)
-fuel_cost_entry.place(x=770, y=475)
+fuel_cost_entry.place(x=770, y=475+30)
 
 fuel_odometer_reading = Label(text='Fuel Odometer Reading: ', font=18) # Fuel odometer reading
-fuel_odometer_reading.place(x=660, y=510)
+fuel_odometer_reading.place(x=660, y=510+30)
 fuel_odometer_reading_entry = Entry(root, width=20)
-fuel_odometer_reading_entry.place(x=850, y=515)
+fuel_odometer_reading_entry.place(x=850, y=515+30)
 
 miles_per_gallon = Label(text='Miles Per Gallon: ', font=18) # Miles Per gallon
-miles_per_gallon.place(x=660, y=550)
+miles_per_gallon.place(x=660, y=550+30)
 miles_per_gallon_entry = Entry(root, width=15)
-miles_per_gallon_entry.place(x=850, y=555)
+miles_per_gallon_entry.place(x=850, y=555+30)
 
 cost_per_mile = Label(text='Cost Per Mile: ', font=18) # Cost Per Mile
-cost_per_mile.place(x=660, y=590)
+cost_per_mile.place(x=660, y=590+30)
 cost_per_mile_entry = Entry(root, width=15)
-cost_per_mile_entry.place(x=850, y=595)
+cost_per_mile_entry.place(x=850, y=595+30)
 
 cost_per_gallon = Label(text='Cost Per Gallon: ', font=18) # Cost Per Gallon
-cost_per_gallon.place(x=660, y=630)
+cost_per_gallon.place(x=660, y=630+30)
 cost_per_gallon_entry = Entry(root, width=15)
-cost_per_gallon_entry.place(x=850, y=635)
+cost_per_gallon_entry.place(x=850, y=635+30)
 
 fuel_log_created = Label(text='Fuel Log Created: ', font=18) # Fuel Log Created
-fuel_log_created.place(x=660, y=670)
+fuel_log_created.place(x=660, y=670+30)
 fuel_log_created_entry = Entry(root, width=15)
-fuel_log_created_entry.place(x=850, y=675)
+fuel_log_created_entry.place(x=850, y=675+30)
 
 fuel_log_updated = Label(text='Fuel Log Updated: ', font=18) # Fuel Log Updated
-fuel_log_updated.place(x=660, y=710)
+fuel_log_updated.place(x=660, y=710+30)
 fuel_log_updated_entry = Entry(root, width=15)
-fuel_log_updated_entry.place(x=850, y=715)
+fuel_log_updated_entry.place(x=850, y=715+30)
+
+#fuel submit button
+submit_fuel = Button(root, text="Submit", bg='lightgreen', font=12)
+submit_fuel.place(x=849, y=780)
+
+#Button to reveiw past fuel logs
+review_fuel_log = Button(root, text="Review Fuel Logs", bg='beige', font=12)
+review_fuel_log.place(x=560, y=780)
 
 #Update Maintenance Log
 update_frame = Frame(root, width= 500, height=260) 
-update_frame.place(x=20, y=500)
+update_frame.place(x=20, y=560)
 update_header = Label(text='Update Logs', font=24)
-update_header.place(x=200, y=520)
+update_header.place(x=200, y=520+60)
 
 clicked = StringVar() # Allows the drop down to activate
 clicked.set("Select Log Type") # Sets a default value to the dropdown
@@ -181,19 +205,19 @@ maintenance_items = [
     "Date Log Updated"
 ]
 log_type_dropdown = OptionMenu(root, clicked, "User Info", "Vehicle Info", "Maintenance Log", "Fuel Log") # Log Options to tap into
-log_type_dropdown.place(x=190, y=570)
+log_type_dropdown.place(x=190, y=570+60)
 
 field_dropdown = StringVar() # Field dropdown menu
 field_dropdown.set("Select field type")
 log_field = OptionMenu(root, field_dropdown, *maintenance_items)
-log_field.place(x=190, y=610)
+log_field.place(x=190, y=610+60)
 
 update_label = Label(root, text="Type Update Here: ") # Update entry box
-update_label.place(x=70, y=655)
+update_label.place(x=70, y=655+60)
 update_entry_box = Entry(root)
-update_entry_box.place(x=190, y=660)
+update_entry_box.place(x=190, y=660+60)
 update_button = Button(root, text="Update", bg="darkgreen", fg="white", font=12)
-update_button.place(x=210, y=690)
+update_button.place(x=210, y=690+60)
 
 
 root.mainloop()
