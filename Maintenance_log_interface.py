@@ -3,7 +3,7 @@ from tkinter import *
 # master window setup
 root = Tk()
 root.title('Vehicle Maintenance Log')
-root.geometry('1200x840') # (width x height)
+root.geometry('1200x800') # (width x height)
 root.config(bg='skyblue')
 
 # User/Vehicle information Frame
@@ -11,6 +11,11 @@ user_frame = Frame(root, width= 500, height=480) # User inforamtion
 user_frame.place(x=20, y=20)
 user_header = Label(text='User Info: ', font=24)
 user_header.place(x=40, y=40)
+
+#def sumbit():
+#    myLabel.configure(text=f'Hello {first_name_entry.get()} {last_name_entry.get()}')
+#myLabel = Label(root, text='', font=24)
+#myLabel.place(x=20,y=20)
 
 first_name_label = Label(text='First Name: ', font=18) # First name label and entry
 first_name_label.place(x=80, y=60)
@@ -67,8 +72,21 @@ time_since_last_maintenance.place(x=80, y=425)
 time_since_last_maintenance_entry = Entry(root, width=20)
 time_since_last_maintenance_entry.place(x=320, y=430)
 
+#function to clear values from user/vehicle form
+def user_info_reset():
+    first_name_entry.delete(0,END)
+    last_name_entry.delete(0,END)
+    owner_entry.delete(0,END)
+    driver_entry.delete(0,END)
+    vehicle_tipe_entry.delete(0,END)
+    year_entry.delete(0,END)
+    make_of_vehicle_entry.delete(0,END)
+    model_of_vehicle_entry.delete(0,END)
+    miles_since_last_maintenance_entry.delete(0,END)
+    time_since_last_maintenance_entry.delete(0,END)
+
 #User/Vehicle Info submit button
-submit_info = Button(root, text="Submit", bg='lightgreen', font=12)
+submit_info = Button(root, text="Submit", bg='lightgreen', font=12, command=user_info_reset)
 submit_info.place(x=320, y=460)
 
 #Button to reveiw past User/Vehicle Info
@@ -122,74 +140,96 @@ date_log_updated.place(x=560, y=260)
 date_log_updated_entry = Entry(root, width=30)
 date_log_updated_entry.place(x=780, y=265)
 
+#function to reset maintenance log form
+def reset_maintenance_log():
+    service_shop_name_entry.delete(0,END)
+    service_cost_entry.delete(0,END)
+    service_type_entry.delete(0,END)
+    service_date_entry.delete(0,END)
+    service_odometer_reading_entry.delete(0,END)
+    maintenance_interval_entry.delete(0,END)
+    datae_log_created_entry.delete(0,END)
+    date_log_updated_entry.delete(0,END)
+
 # Button to review past maintenance logs
 review_maintenance_log = Button(root, text="Review Maintenance Logs", bg='beige', font=12)
 review_maintenance_log.place(x=560, y=300)
 
 #Button to submit maintenance log
-submit_maintenance = Button(root, text="Submit", bg='lightgreen', font=12)
+submit_maintenance = Button(root, text="Submit", bg='lightgreen', font=12, command=reset_maintenance_log)
 submit_maintenance.place(x=780, y=300)
 
 # Frame for Fuel Log
 fuel_log_frame = Frame(root, width=640, height=400)
-fuel_log_frame.place(x=540, y=420)
+fuel_log_frame.place(x=540, y=380)
 
 fuel_header = Label(text='Fuel Log', font=30) # Fuel Log Header
-fuel_header.place(x=820, y=400+30)
+fuel_header.place(x=820, y=400-10)
 
 fuel_added = Label(text='Fuel Added: ', font=18) # Fuel Added
-fuel_added.place(x=660, y=430+30)
+fuel_added.place(x=660, y=430-10)
 fuel_added_entry = Entry(root, width=30)
-fuel_added_entry.place(x=770, y=435+30)
+fuel_added_entry.place(x=770, y=435-10)
 
 fuel_cost = Label(text='Fuel Cost: ', font=18) # Fuel cost
-fuel_cost.place(x=660, y=470+30)
+fuel_cost.place(x=660, y=470-10)
 fuel_cost_entry = Entry(root, width=30)
-fuel_cost_entry.place(x=770, y=475+30)
+fuel_cost_entry.place(x=770, y=475-10)
 
 fuel_odometer_reading = Label(text='Fuel Odometer Reading: ', font=18) # Fuel odometer reading
-fuel_odometer_reading.place(x=660, y=510+30)
+fuel_odometer_reading.place(x=660, y=510-10)
 fuel_odometer_reading_entry = Entry(root, width=20)
-fuel_odometer_reading_entry.place(x=850, y=515+30)
+fuel_odometer_reading_entry.place(x=850, y=515-10)
 
 miles_per_gallon = Label(text='Miles Per Gallon: ', font=18) # Miles Per gallon
-miles_per_gallon.place(x=660, y=550+30)
+miles_per_gallon.place(x=660, y=550-10)
 miles_per_gallon_entry = Entry(root, width=15)
-miles_per_gallon_entry.place(x=850, y=555+30)
+miles_per_gallon_entry.place(x=850, y=555-10)
 
 cost_per_mile = Label(text='Cost Per Mile: ', font=18) # Cost Per Mile
-cost_per_mile.place(x=660, y=590+30)
+cost_per_mile.place(x=660, y=590-10)
 cost_per_mile_entry = Entry(root, width=15)
-cost_per_mile_entry.place(x=850, y=595+30)
+cost_per_mile_entry.place(x=850, y=595-10)
 
 cost_per_gallon = Label(text='Cost Per Gallon: ', font=18) # Cost Per Gallon
-cost_per_gallon.place(x=660, y=630+30)
+cost_per_gallon.place(x=660, y=630-10)
 cost_per_gallon_entry = Entry(root, width=15)
-cost_per_gallon_entry.place(x=850, y=635+30)
+cost_per_gallon_entry.place(x=850, y=635-10)
 
 fuel_log_created = Label(text='Fuel Log Created: ', font=18) # Fuel Log Created
-fuel_log_created.place(x=660, y=670+30)
+fuel_log_created.place(x=660, y=670-10)
 fuel_log_created_entry = Entry(root, width=15)
-fuel_log_created_entry.place(x=850, y=675+30)
+fuel_log_created_entry.place(x=850, y=675-10)
 
 fuel_log_updated = Label(text='Fuel Log Updated: ', font=18) # Fuel Log Updated
-fuel_log_updated.place(x=660, y=710+30)
+fuel_log_updated.place(x=660, y=710-10)
 fuel_log_updated_entry = Entry(root, width=15)
-fuel_log_updated_entry.place(x=850, y=715+30)
+fuel_log_updated_entry.place(x=850, y=715-10)
+
+#Function to reset Fuel Log
+def reset_fuel_log():
+    fuel_added_entry.delete(0,END)
+    fuel_cost_entry.delete(0,END)
+    fuel_odometer_reading_entry.delete(0,END)
+    miles_per_gallon_entry.delete(0,END)
+    cost_per_mile_entry.delete(0,END)
+    cost_per_gallon_entry.delete(0,END)
+    fuel_log_created_entry.delete(0,END)
+    fuel_log_updated_entry.delete(0,END)
 
 #fuel submit button
-submit_fuel = Button(root, text="Submit", bg='lightgreen', font=12)
-submit_fuel.place(x=849, y=780)
+submit_fuel = Button(root, text="Submit", bg='lightgreen', font=12, command=reset_fuel_log)
+submit_fuel.place(x=849, y=780-40)
 
 #Button to reveiw past fuel logs
 review_fuel_log = Button(root, text="Review Fuel Logs", bg='beige', font=12)
-review_fuel_log.place(x=560, y=780)
+review_fuel_log.place(x=560, y=780-40)
 
-#Update Maintenance Log
+#Update logs Log
 update_frame = Frame(root, width= 500, height=260) 
-update_frame.place(x=20, y=560)
+update_frame.place(x=20, y=520)
 update_header = Label(text='Update Logs', font=24)
-update_header.place(x=200, y=520+60)
+update_header.place(x=200, y=520+20)
 
 clicked = StringVar() # Allows the drop down to activate
 clicked.set("Select Log Type") # Sets a default value to the dropdown
@@ -205,19 +245,23 @@ maintenance_items = [
     "Date Log Updated"
 ]
 log_type_dropdown = OptionMenu(root, clicked, "User Info", "Vehicle Info", "Maintenance Log", "Fuel Log") # Log Options to tap into
-log_type_dropdown.place(x=190, y=570+60)
+log_type_dropdown.place(x=190, y=570+20)
 
 field_dropdown = StringVar() # Field dropdown menu
 field_dropdown.set("Select field type")
 log_field = OptionMenu(root, field_dropdown, *maintenance_items)
-log_field.place(x=190, y=610+60)
+log_field.place(x=190, y=610+20)
 
 update_label = Label(root, text="Type Update Here: ") # Update entry box
-update_label.place(x=70, y=655+60)
+update_label.place(x=70, y=655+20)
 update_entry_box = Entry(root)
-update_entry_box.place(x=190, y=660+60)
-update_button = Button(root, text="Update", bg="darkgreen", fg="white", font=12)
-update_button.place(x=210, y=690+60)
+update_entry_box.place(x=190, y=660+20)
+
+#Reset update box when button is pushed
+def reset_update_entry():
+    update_entry_box.delete(0,END)
+update_button = Button(root, text="Update", bg="darkgreen", fg="white", font=12, command=reset_update_entry)
+update_button.place(x=210, y=690+20)
 
 
 root.mainloop()
