@@ -1,4 +1,4 @@
-class fuel_entry:
+class fuelEntry:
     def __init__(self, fuelLogDate, gallons, totalCost, odometer_Reading, miles_per_gallon, cost_per_mile, cost_per_gallon, log_creation, log_updated):
         self.fuelLogDate = fuelLogDate    
         self.gallons = gallons
@@ -23,6 +23,6 @@ if __name__ == "__main__":
     cost_per_mile = float()
     cost_per_gallon =float()
     
-    FLog = fuel_entry(gallons, totalCost, odometer_Reading, miles_per_gallon, cost_per_mile, cost_per_gallon, log_creation, log_updated)
+    FLog = fuelEntry(gallons, totalCost, odometer_Reading, miles_per_gallon, cost_per_mile, cost_per_gallon, log_creation, log_updated)
 print("Today's date is : ", fuelLogDate)   
 FLog.FL()
