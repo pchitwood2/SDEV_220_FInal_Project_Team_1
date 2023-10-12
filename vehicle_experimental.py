@@ -1,3 +1,6 @@
+#Made by Marc Bradley
+#MO8 Final Project
+#This is a experimental class I made that could prove useful for the final piece.
 class vehicle:
     def __init__(self, vehicle_info, vehicle_type, year, make, model, doors, roof, fuel_capacity, miles_driven, fuel):
         self.vehicle_info = vehicle_info
