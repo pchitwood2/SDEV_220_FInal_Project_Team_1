@@ -12,8 +12,8 @@ class fuelEntry:
        
        
 if __name__ == "__main__":
-    import datetime
-    fuelLogDate  = datetime.date.today() #make an input
+    
+    fuelLogDate  = input("Date of Log:")
     gallons = float(input("How many gallons is in your car: "))
     totalCost = float(input("What is your total cost"))
     odometer_Reading = int(input("What is your odometer reading"))
