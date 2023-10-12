@@ -1,3 +1,6 @@
+#Made by Marc Bradley
+#MO8 Final Project
+#This a potential class that could be used in our final piece.
 class maintenanceEntry:
     def __init__(self, serviceDate, serviceName, serviceCost, serviceOdometerReading, serviceShopName):
         self.serviceDate = serviceDate    
