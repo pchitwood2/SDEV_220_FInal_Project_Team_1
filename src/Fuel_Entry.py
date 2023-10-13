@@ -11,14 +11,13 @@ class fuelEntry:
         print("Gallons of Fuel:  " + self.gallons + "\nTotal Cost of Fuel: " + self.totalCost + "\nOdometer Reading: ", self.odometer_Reading)
        
        
-if __name__ == "__main__":
+#if __name__ == "__main__":    
+#    fuelLogDate  = input("Date of Log:")
+#    gallons = float(input("How many gallons is in your car: "))
+#    totalCost = float(input("What is your total cost"))
+#    odometer_Reading = int(input("What is your odometer reading"))
     
-    fuelLogDate  = input("Date of Log:")
-    gallons = float(input("How many gallons is in your car: "))
-    totalCost = float(input("What is your total cost"))
-    odometer_Reading = int(input("What is your odometer reading"))
     
-    
-    FLog = fuelEntry(gallons, totalCost, odometer_Reading)
-print("Today's date is : ", fuelLogDate)   
-FLog.FL()
+#    FLog = fuelEntry(fuelLogDate, gallons, totalCost, odometer_Reading)
+#print("Today's date is : ", fuelLogDate)   
+#FLog.FL()

@@ -2,6 +2,8 @@ import tkinter.tix
 import tkinter.ttk
 from tkinter import *
 from vehicle import *
+from maintenance_entry import *
+from Fuel_Entry import *
 
 # master window setup
 root = Tk()
@@ -109,6 +111,7 @@ def user_info_reset():
             if miles_per_gallon_entry.get():
                 if fuel_odometer_reading_entry.get():
                     #insert fuel hooks here
+                    fuel_entry = fuelEntry(fuel_date_entry.get(), miles_per_gallon_entry.get(), fuel_cost_entry.get(), fuel_odometer_reading_entry.get())
                     fuel_date_entry.delete(0, END)
                     fuel_cost_entry.delete(0, END)
                     fuel_odometer_reading_entry.delete(0, END)
