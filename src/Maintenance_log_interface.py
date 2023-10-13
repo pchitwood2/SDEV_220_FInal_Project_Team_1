@@ -9,9 +9,11 @@ root.title('Vehicle Maintenance Log')
 root.geometry('1470x540')  # (width x height)
 root.config(bg='skyblue')
 
-
+vehicle_selected = StringVar()
 def select_dropdown():
     selection = dropdown.current()
+    global vehicle_selected
+    vehicle_selected.set(vehicle_list[dropdown.current()])
     if selection == 0:
         year_entry.config(state="normal")
         make_of_vehicle_entry.config(state="normal")
@@ -83,7 +85,7 @@ def user_info_reset():
                     if plate_number_entry.get():
                         vehicle = Vehicle(year_entry.get(), make_of_vehicle_entry.get(), model_of_vehicle_entry.get(),
                                           vehicle_color_entry.get(), plate_number_entry.get())
-                        create_vehicle_list(str(vehicle))
+                        create_vehicle_list((vehicle))
                         dropdown.config(values=vehicle_list)
                         year_entry.delete(0, END)
                         make_of_vehicle_entry.delete(0, END)
@@ -171,8 +173,8 @@ fuel_cost.place(x=1080, y=125)
 fuel_cost_entry = Entry(root, width=30)
 fuel_cost_entry.place(x=1180, y=130)
 
-miles_per_gallon = Label(text='Miles Per Gallon: ', font=18)  # Miles Per gallon
-miles_per_gallon.place(x=1034, y=165)
+miles_per_gallon = Label(text='Gallons: ', font=18)  # Miles Per gallon
+miles_per_gallon.place(x=1096, y=165)
 miles_per_gallon_entry = Entry(root, width=15)
 miles_per_gallon_entry.place(x=1180, y=170)
 
@@ -190,6 +192,10 @@ def review_window():
     new_window.config(bg="skyblue")
     first_vehicle_frame = Frame(new_window, width="960", height="460")
     first_vehicle_frame.place(x=20, y=20)
+    vehicle_label = Label(new_window, textvariable=vehicle_selected, font=25)
+    vehicle_label.place(x=100, y=100)
+    
+    new_window.mainloop()
 
 
 # Button to Review Logs

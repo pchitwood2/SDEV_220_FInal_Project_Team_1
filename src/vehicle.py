@@ -20,7 +20,7 @@ class Vehicle:
     maintenance_log = []  # list of MaintenanceEntry instances"""
 
     def __repr__(self):
-        return f"{self.year} {self.make} {self.model} {self.color} {self.license_plate_number}"
+        return f"Year: {self.year}\n\nMake of Vehicle: {self.make}\n\nModel of Vehicle: {self.model}\n\nColor of Vehicle: {self.color}\n\nVehicle number: {self.license_plate_number}"
 
 
 vehicle_list = ["Create New Vehicle"]
