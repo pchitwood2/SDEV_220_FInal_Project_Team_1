@@ -110,27 +110,27 @@ maintenance_header.place(x=670, y=40)
 
 service_shop_name = Label(text='Service Shop: ', font=18)  # Service Shop Name
 service_shop_name.place(x=560, y=85)
-service_shop_name_entry = Entry(root, width=30)
+service_shop_name_entry = Entry(root, width=24)
 service_shop_name_entry.place(x=670, y=90)
 
 service_name = Label(text='Service Name: ', font=18)  # Service type
 service_name.place(x=560, y=125)
-service_name_entry = Entry(root, width=30)
+service_name_entry = Entry(root, width=24)
 service_name_entry.place(x=670, y=130)
 
 service_date = Label(text='Service Date: ', font=18)  # Service date
 service_date.place(x=560, y=165)
-service_date_entry = Entry(root, width=30)
+service_date_entry = Entry(root, width=24)
 service_date_entry.place(x=670, y=170)
 
 service_cost = Label(text='Service Cost: ', font=18)  # Service cost
 service_cost.place(x=560, y=205)
-service_cost_entry = Entry(root, width=30)
+service_cost_entry = Entry(root, width=24)
 service_cost_entry.place(x=670, y=210)
 
 service_odometer_reading = Label(text='Odometer Reading: ', font=18)  # Service Odometer Reading
 service_odometer_reading.place(x=520, y=245)
-service_odometer_reading_entry = Entry(root, width=30)
+service_odometer_reading_entry = Entry(root, width=24)
 service_odometer_reading_entry.place(x=670, y=250)
 
 # Frame for Fuel Log
@@ -143,22 +143,22 @@ fuel_header.place(x=1180, y=40)
 
 fuel_date = Label(text='Fuel Date: ', font=18)  # Fuel Date
 fuel_date.place(x=1080, y=85)
-fuel_date_entry = Entry(root, width=30)
+fuel_date_entry = Entry(root, width=18)
 fuel_date_entry.place(x=1180, y=90)
 
 fuel_cost = Label(text='Fuel Cost: ', font=18)  # Fuel cost
 fuel_cost.place(x=1080, y=125)
-fuel_cost_entry = Entry(root, width=30)
+fuel_cost_entry = Entry(root, width=18)
 fuel_cost_entry.place(x=1180, y=130)
 
 miles_per_gallon = Label(text='Gallons: ', font=18)  # Miles Per gallon
 miles_per_gallon.place(x=1096, y=165)
-miles_per_gallon_entry = Entry(root, width=15)
+miles_per_gallon_entry = Entry(root, width=18)
 miles_per_gallon_entry.place(x=1180, y=170)
 
 fuel_odometer_reading = Label(text='Odometer Reading: ', font=18)  # Fuel odometer reading
 fuel_odometer_reading.place(x=1018, y=205)
-fuel_odometer_reading_entry = Entry(root, width=20)
+fuel_odometer_reading_entry = Entry(root, width=18)
 fuel_odometer_reading_entry.place(x=1180, y=210)
 
 
