@@ -8,7 +8,7 @@ from Fuel_Entry import *
 # master window setup
 root = Tk()
 root.title('Vehicle Maintenance Log')
-root.geometry('1470x540')  # (width x height)
+root.geometry('1470x520')  # (width x height)
 root.config(bg='skyblue')
 
 vehicle_selected = StringVar()
@@ -38,44 +38,42 @@ def select_dropdown():
 
 
 # Vehicle information Frame
-vehicle_frame = Frame(root, width=450, height=340)
-vehicle_frame.place(x=30, y=20)
+vehicle_frame = Frame(root, width=420, height=370)
+vehicle_frame.place(x=40, y=20)
 
 vehicle_header = Label(text='Vehicle Information ', font=24)  # Vehicle Information
 vehicle_header.place(x=210, y=40)
 
-divider_one = Label(text="--------------------------------------------------------------------------")
-divider_one.place(x=80, y=60)
 
-dropdown = tkinter.ttk.Combobox(root, values=vehicle_list, width=30, state="readonly")
-dropdown.place(x=200, y=90)
+dropdown = tkinter.ttk.Combobox(root, values=vehicle_list, width=22, state="readonly")
+dropdown.place(x=145, y=90)
 dropdown.current(0)
 dropdown.bind("<<ComboboxSelected>>",lambda event: select_dropdown())
 
 year = Label(text='Year: ', font=18)  # Year vehicle was made
-year.place(x=200, y=130)
-year_entry = Entry(root, width=10)
-year_entry.place(x=280, y=130)
+year.place(x=140, y=130)
+year_entry = Entry(root, width=16)
+year_entry.place(x=230, y=130)
 
 make_of_vehicle = Label(text='Make: ', font=18)  # Make of vehicle
-make_of_vehicle.place(x=200, y=170)
-make_of_vehicle_entry = Entry(root, width=20)
-make_of_vehicle_entry.place(x=280, y=170)
+make_of_vehicle.place(x=140, y=170)
+make_of_vehicle_entry = Entry(root, width=16)
+make_of_vehicle_entry.place(x=230, y=170)
 
 model_of_vehicle = Label(text='Model: ', font=18)  # Model of vehicle
-model_of_vehicle.place(x=200, y=210)
-model_of_vehicle_entry = Entry(root, width=20)
-model_of_vehicle_entry.place(x=280, y=210)
+model_of_vehicle.place(x=140, y=210)
+model_of_vehicle_entry = Entry(root, width=16)
+model_of_vehicle_entry.place(x=230, y=210)
 
 vehicle_color = Label(text='Color: ', font=18)  # Model of vehicle
-vehicle_color.place(x=200, y=250)
-vehicle_color_entry = Entry(root, width=20)
-vehicle_color_entry.place(x=280, y=250)
+vehicle_color.place(x=140, y=250)
+vehicle_color_entry = Entry(root, width=16)
+vehicle_color_entry.place(x=230, y=250)
 
 plate_number = Label(text='Plate Number: ', font=18)  # Model of vehicle
-plate_number.place(x=143, y=290)
-plate_number_entry = Entry(root, width=20)
-plate_number_entry.place(x=280, y=290)
+plate_number.place(x=140, y=290)
+plate_number_entry = Entry(root, width=16)
+plate_number_entry.place(x=230, y=290)
 
 
 # function to clear values from user/vehicle form
@@ -97,19 +95,18 @@ def user_info_reset():
                         plate_number_entry.delete(0, END)
     else:
         return
-    confirmation_label = Label(root, text="Submission was Successful!", font=20, bg="skyblue")
-    confirmation_label.place(x=770, y=385)
+    vehicleConfirmation_label = Label(root, text="Submission was Successful!", font=20)
+    vehicleConfirmation_label.place(x=190, y=365)
+    root.after(2000, lambda: vehicleConfirmation_label.destroy())
 
 
 # Maintenance log frame
-maintenance_frame = Frame(root, width=450, height=340)
+maintenance_frame = Frame(root, width=450, height=370)
 maintenance_frame.place(x=510, y=20)
 
 maintenance_header = Label(text='Maintenance Log', font=30)  # Maintenance Log Header
 maintenance_header.place(x=670, y=40)
 
-divider_two = Label(text="--------------------------------------------------------------------------")
-divider_two.place(x=545, y=60)
 
 service_shop_name = Label(text='Service Shop: ', font=18)  # Service Shop Name
 service_shop_name.place(x=560, y=85)
@@ -137,14 +134,12 @@ service_odometer_reading_entry = Entry(root, width=30)
 service_odometer_reading_entry.place(x=670, y=250)
 
 # Frame for Fuel Log
-fuel_log_frame = Frame(root, width=450, height=340)
+fuel_log_frame = Frame(root, width=450, height=370)
 fuel_log_frame.place(x=990, y=20)
 
 fuel_header = Label(text='Fuel Log', font=30)  # Fuel Log Header
 fuel_header.place(x=1180, y=40)
 
-divider_three = Label(text="--------------------------------------------------------------------------")
-divider_three.place(x=1025, y=60)
 
 fuel_date = Label(text='Fuel Date: ', font=18)  # Fuel Date
 fuel_date.place(x=1080, y=85)
@@ -197,13 +192,13 @@ def review_window():
 
 # Button to Review Logs
 review_information = Button(root, text="Review Logs", bg='beige', font=12, command=review_window)
-review_information.place(x=680, y=470)
+review_information.place(x=680, y=430)
 
 
 # function for submit button
-def show():
-    confirmation_label = Label(root, text="Submission was Successful!", font=20, bg="skyblue")
-    confirmation_label.place(x=770, y=385)
+def submitMaintenanceEntry():
+    maintenanceConfirmation_label = Label(root, text="Submission was Successful!", font=20)
+    maintenanceConfirmation_label.place(x=680, y=365)
     #Maintenance Entry
     if service_shop_name_entry.get():
         if service_name_entry.get():
@@ -219,7 +214,11 @@ def show():
                     service_odometer_reading_entry.delete(0, END)
     else:
         return
-    
+    root.after(2000, lambda: maintenanceConfirmation_label.destroy())
+
+def submitFuelEntry():
+    fuelConfirmation_label = Label(root, text="Submission was Successful!", font=20)
+    fuelConfirmation_label.place(x=1120, y=365)
     #Fuel Entry
     if fuel_date_entry.get():
         if fuel_cost_entry.get():
@@ -235,14 +234,19 @@ def show():
 
     else:
         return
+    root.after(2000, lambda: fuelConfirmation_label.destroy())
 
 
-# Submit Button that communicates to classes
-submit_vehicle_info = Button(root, text="Submit Entries", bg='lightgreen', font=12, command=show)
-submit_vehicle_info.place(x=700, y=380)
+# Submit Button that communicates to maintenance class
+submit_maintenanceEntry = Button(root, text="Submit Entry", bg='lightgreen', font=12, command=submitMaintenanceEntry)
+submit_maintenanceEntry.place(x=700, y=330)
+
+# Submit Button that communicates to fuel class
+submit_fuelEntry = Button(root, text="Submit Entry", bg='lightgreen', font=12, command=submitFuelEntry)
+submit_fuelEntry.place(x=1150, y=330)
 
 # Button to Add New Entries to a different vehicle
 add_vehicle = Button(root, text="Add Vehicle", bg='yellow', font=12, command=user_info_reset)
-add_vehicle.place(x=680, y=425)
+add_vehicle.place(x=200, y=330)
 
 root.mainloop()
