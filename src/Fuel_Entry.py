@@ -7,17 +7,13 @@ class fuelEntry:
        
        
         
-    def FL(self):
-        print("Gallons of Fuel:  " + self.gallons + "\nTotal Cost of Fuel: " + self.totalCost + "\nOdometer Reading: ", self.odometer_Reading)
-       
-       
-#if __name__ == "__main__":    
-#    fuelLogDate  = input("Date of Log:")
-#    gallons = float(input("How many gallons is in your car: "))
-#    totalCost = float(input("What is your total cost"))
-#    odometer_Reading = int(input("What is your odometer reading"))
+    def __repr__(self):
+        return f"Log: {fuelEntry_list.index(self)} \nGallons of Fuel: {self.gallons}\nTotal Cost of Fuel: {self.totalCost}\nOdometer Reading: {self.odometer_Reading}\n\n"
     
-    
-#    FLog = fuelEntry(fuelLogDate, gallons, totalCost, odometer_Reading)
-#print("Today's date is : ", fuelLogDate)   
-#FLog.FL()
+fuelEntry_list = []
+
+def create_FuelEntry_List(FuelEntry):
+    fuelEntry_desc_list = [FuelEntry]
+    fuelEntry_list.append(FuelEntry)
+    print(len(fuelEntry_list))
+    return

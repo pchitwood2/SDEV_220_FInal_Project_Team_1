@@ -80,6 +80,7 @@ plate_number_entry.place(x=280, y=290)
 
 # function to clear values from user/vehicle form
 def user_info_reset():
+    #vehicle
     if year_entry.get():
         if make_of_vehicle_entry.get():
             if model_of_vehicle_entry.get():
@@ -94,31 +95,10 @@ def user_info_reset():
                         model_of_vehicle_entry.delete(0, END)
                         vehicle_color_entry.delete(0, END)
                         plate_number_entry.delete(0, END)
-
-    elif service_shop_name_entry.get():
-        if service_name_entry.get():
-            if service_cost_entry.get():
-                if service_odometer_reading_entry.get():
-                    #insert maintenance hooks here
-                    service_shop_name_entry.delete(0, END)
-                    service_cost_entry.delete(0, END)
-                    service_name_entry.delete(0, END)
-                    service_date_entry.delete(0, END)
-                    service_odometer_reading_entry.delete(0, END)
-
-    elif fuel_date_entry.get():
-        if fuel_cost_entry.get():
-            if miles_per_gallon_entry.get():
-                if fuel_odometer_reading_entry.get():
-                    #insert fuel hooks here
-                    fuel_entry = fuelEntry(fuel_date_entry.get(), miles_per_gallon_entry.get(), fuel_cost_entry.get(), fuel_odometer_reading_entry.get())
-                    fuel_date_entry.delete(0, END)
-                    fuel_cost_entry.delete(0, END)
-                    fuel_odometer_reading_entry.delete(0, END)
-                    miles_per_gallon_entry.delete(0, END)
-
     else:
         return
+    confirmation_label = Label(root, text="Submission was Successful!", font=20, bg="skyblue")
+    confirmation_label.place(x=770, y=385)
 
 
 # Maintenance log frame
@@ -198,6 +178,20 @@ def review_window():
     vehicle_label = Label(new_window, textvariable=vehicle_selected, font=25)
     vehicle_label.place(x=100, y=100)
     
+    # Create a Fuel Entry widget inside the Frame
+    fuelEntry_View_Label = Label(first_vehicle_frame, text="Fuel Entries")
+    fuelEntry_View_Label.place(x=50, y=30)
+    fuelEntry_View = Text(first_vehicle_frame, width=60, height=25)
+    fuelEntry_View.place(x=50, y=50)
+    fuelEntry_View.insert('1.0', f"{''.join(str(fuelEntries) for fuelEntries in fuelEntry_list)}")
+
+    # Create a Maintenance Entry widget inside the Frame
+    maintenanceEntry_View_Label = Label(first_vehicle_frame, text="Maintenance Entries")
+    maintenanceEntry_View_Label.place(x=475, y=30)
+    maintenanceEntry_View = Text(first_vehicle_frame, width=60, height=25)
+    maintenanceEntry_View.place(x=475, y=50)
+    maintenanceEntry_View.insert('1.0', f"{''.join(str(maintenanceEntries) for maintenanceEntries in maintenanceEntry_list)}")
+
     new_window.mainloop()
 
 
@@ -210,10 +204,41 @@ review_information.place(x=680, y=470)
 def show():
     confirmation_label = Label(root, text="Submission was Successful!", font=20, bg="skyblue")
     confirmation_label.place(x=770, y=385)
+    #Maintenance Entry
+    if service_shop_name_entry.get():
+        if service_name_entry.get():
+            if service_cost_entry.get():
+                if service_odometer_reading_entry.get():
+                    #insert maintenance hooks here
+                    maintenance_entry = MaintenanceEntry(service_shop_name_entry.get(), service_name_entry.get(), service_date_entry.get(), service_cost_entry.get(), service_odometer_reading_entry.get())
+                    create_maintenanceEntry_List((maintenance_entry))
+                    service_shop_name_entry.delete(0, END)
+                    service_cost_entry.delete(0, END)
+                    service_name_entry.delete(0, END)
+                    service_date_entry.delete(0, END)
+                    service_odometer_reading_entry.delete(0, END)
+    else:
+        return
+    
+    #Fuel Entry
+    if fuel_date_entry.get():
+        if fuel_cost_entry.get():
+            if miles_per_gallon_entry.get():
+                if fuel_odometer_reading_entry.get():
+                    #insert fuel hooks here
+                    fuel_entry = fuelEntry(fuel_date_entry.get(), miles_per_gallon_entry.get(), fuel_cost_entry.get(), fuel_odometer_reading_entry.get())
+                    create_FuelEntry_List((fuel_entry))
+                    fuel_date_entry.delete(0, END)
+                    fuel_cost_entry.delete(0, END)
+                    fuel_odometer_reading_entry.delete(0, END)
+                    miles_per_gallon_entry.delete(0, END)
+
+    else:
+        return
 
 
 # Submit Button that communicates to classes
-submit_vehicle_info = Button(root, text="Submit", bg='lightgreen', font=12, command=show)
+submit_vehicle_info = Button(root, text="Submit Entries", bg='lightgreen', font=12, command=show)
 submit_vehicle_info.place(x=700, y=380)
 
 # Button to Add New Entries to a different vehicle
