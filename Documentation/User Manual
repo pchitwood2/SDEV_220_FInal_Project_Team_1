@@ -1,15 +1,13 @@
 This document will contain instructions for general use of VTrack. 
 ##Vehicle Information##
-1.There is a drop down that should show "Create New Vehicle"
-2.Under that you have sub sections that require inputs from the user.
+1. Welcome to VTrack!
+2.There are sub sections that require inputs from the user.
 3.Year: Input year of vehicle
 4.Make: Input Make of vehicle (Ex: Ford,Honda etc)
 5.Model: Input Model of vehicle (Ex: Fusion,Civic.Accord etc)
 6.Color: Input Color of vehicle
 7.Plate Number: Input your plate number on the back of vehicle
-8.Add Vehicle: Click Add Vehicle to submit of vehicle log with all of the data you just entered. You will see your saved vehicle log in the drop down where it says "Create New Vehicle".(You will see Submission was successful!)
-9.Make sure when inputting your maintenance and fuel logs, you have your vehicle selected in that drop down menu.
-10. You will know it is selected if you shows the car name and the inputs in vehicle information is greyed out.
+8.Add Vehicle: Click Add Vehicle to submit the vehicle log with all of the data you just entered. After that, the app will immediately proceed to the next step.
 ##Maintenance Log##
 1.Service Shop: Input the name of the shop/store that you received service from.
 2.Service Name: Input the name of the service that you received from the shop/store.
