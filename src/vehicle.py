@@ -23,7 +23,7 @@ class Vehicle:
         return f"{self.year} {self.make} {self.model}"
 
 
-vehicle_list = ["Create New Vehicle"]
+vehicle_list = []
 
 
 def create_vehicle_list(vehicle):
