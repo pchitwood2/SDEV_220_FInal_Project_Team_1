@@ -1,3 +1,8 @@
+"""Name: Maintenance_log_interface.py
+Last updated: 10/14/2023
+Authors: Justin Baeten, Peyton Chitwood, Michael Barthauer, Marc-Anthony Bradley, Michael Coughlin
+Description: This is the GUI file for the Vstart application. It will take
+various inputs to log data for vehicles."""
 import tkinter.tix
 import tkinter.ttk
 from tkinter import *
@@ -11,39 +16,12 @@ root.title('Vehicle Maintenance Log')
 root.geometry('1000x500')  # (width x height)
 root.config(bg='skyblue')
 
-vehicle_selected = StringVar()
-"""def select_dropdown():
-    selection = dropdown.current()
-    global vehicle_selected
-    vehicle_selected.set(vehicle_list[dropdown.current()])
-    if selection == 0:
-        year_entry.config(state="normal")
-        make_of_vehicle_entry.config(state="normal")
-        model_of_vehicle_entry.config(state="normal")
-        vehicle_color_entry.config(state="normal")
-        plate_number_entry.config(state="normal")
-        add_vehicle.config(state="normal")
-    else:
-        year_entry.delete(0, END)
-        make_of_vehicle_entry.delete(0, END)
-        model_of_vehicle_entry.delete(0, END)
-        vehicle_color_entry.delete(0, END)
-        plate_number_entry.delete(0, END)
-        year_entry.config(state="disabled")
-        make_of_vehicle_entry.config(state="disabled")
-        model_of_vehicle_entry.config(state="disabled")
-        vehicle_color_entry.config(state="disabled")
-        plate_number_entry.config(state="disabled")
-        add_vehicle.config(state="disabled")
-"""
-
 # Vehicle information Frame
 vehicle_frame = Frame(root, width=420, height=370)
 vehicle_frame.place(x=280, y=20)
 
 vehicle_header = Label(text='Vehicle Information ', font=24)  # Vehicle Information
 vehicle_header.place(x=440, y=40)
-
 
 year = Label(text='Year: ', font=18)  # Year vehicle was made
 year.place(x=380, y=130)
@@ -252,7 +230,7 @@ review_information = Button(root, text="Review Logs", bg='beige', font=12, comma
 review_information.pack_forget()
 
 
-# function for submit button
+# function for submit button for the Maintenance Entry
 def submitMaintenanceEntry():
     maintenanceConfirmation_label = Label(root, text="Submission was Successful!", font=20)
     maintenanceConfirmation_label.place(x=205, y=365)
@@ -273,6 +251,8 @@ def submitMaintenanceEntry():
         return
     root.after(2000, lambda: maintenanceConfirmation_label.destroy())
 
+
+# Function for the submit button for the Fuel Entry
 def submitFuelEntry():
     fuelConfirmation_label = Label(root, text="Submission was Successful!", font=20)
     fuelConfirmation_label.place(x=680, y=365)
