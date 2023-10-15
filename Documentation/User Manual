@@ -1,1 +1,28 @@
 This document will contain instructions for general use of VTrack. 
+##Vehicle Information##
+1.There is a drop down that should show "Create New Vehicle"
+2.Under that you have sub sections that require inputs from the user.
+3.Year: Input year of vehicle
+4.Make: Input Make of vehicle (Ex: Ford,Honda etc)
+5.Model: Input Model of vehicle (Ex: Fusion,Civic.Accord etc)
+6.Color: Input Color of vehicle
+7.Plate Number: Input your plate number on the back of vehicle
+8.Add Vehicle: Click Add Vehicle to submit of vehicle log with all of the data you just entered. You will see your saved vehicle log in the drop down where it says "Create New Vehicle".(You will see Submission was successful!)
+9.Make sure when inputting your maintenance and fuel logs, you have your vehicle selected in that drop down menu.
+10. You will know it is selected if you shows the car name and the inputs in vehicle information is greyed out.
+##Maintenance Log##
+1.Service Shop: Input the name of the shop/store that you received service from.
+2.Service Name: Input the name of the service that you received from the shop/store.
+3.Service Date: Input the date that you received the service. (Ex: 10-15-23 or 10/15/23)
+4.Service Cost: Input the cost of the service (Ex: 100 or 100$).
+5.Odometer Reading: Input the Odometer Reading that you acquired from the service. (If you dont have one or if you dont know then inputting N/A is fine).
+6.Submit Entry: Click Submit entry after you have finished logging everything inside of the maintenance log. (You will see Submission was successful!)
+##Fuel Log##
+1.Fuel Date: Input date that you put fuel into your vehicle.(From a gas station).
+2.Fuel Cost: Input the cost of the fuel. (Input a whole number or float)
+3.Gallons: Input how many gallons of fuel you just put into your car.
+4.Odometer Reading: Input your current Odometer Reading in your car.
+5.Submit Entry: Click Submit entry after you have finished logging everything inside of the fuel log. (You will see Submission was successful!)
+##Review Logs##
+1.Click on Review Logs to review all of the logs you have made for your vehicle.
+
