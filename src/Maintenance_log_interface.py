@@ -66,7 +66,7 @@ vehicle_color_entry = Entry(root, width=16)
 vehicle_color_entry.place(x=470, y=250)
 
 plate_number = Label(text='Plate Number: ', font=18)  # Model of vehicle
-plate_number.place(x=380, y=290)
+plate_number.place(x=340, y=290)
 plate_number_entry = Entry(root, width=16)
 plate_number_entry.place(x=470, y=290)
 
@@ -125,7 +125,7 @@ def add_vehicle_button():
     service_cost.place(x=100, y=205)
     service_cost_entry.place(x=210, y=210)
 
-    service_odometer_reading.place(x=85, y=245)
+    service_odometer_reading.place(x=60, y=245)
     service_odometer_reading_entry.place(x=210, y=250)
 
     submit_maintenanceEntry.place(x=215, y=330)
@@ -144,7 +144,7 @@ def add_vehicle_button():
     miles_per_gallon.place(x=600, y=165)
     miles_per_gallon_entry.place(x=710, y=170)
 
-    fuel_odometer_reading.place(x=585, y=205)
+    fuel_odometer_reading.place(x=560, y=205)
     fuel_odometer_reading_entry.place(x=710, y=210)
 
     submit_fuelEntry.place(x=690, y=330)
