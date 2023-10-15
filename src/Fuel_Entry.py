@@ -1,3 +1,10 @@
+"""
+Name: fuelEntry.py
+Authors: Peyton Chitwood
+Date last updated: 10/14/2023
+Description: Defines class fuelEntry which stores fuel entry information.
+"""
+
 class fuelEntry:
     # Initializes Fuel Entry Class
     def __init__(self, fuelLogDate, gallons, totalCost, odometer_Reading):
