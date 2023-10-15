@@ -8,7 +8,7 @@ class fuelEntry:
        
         
     def __repr__(self):
-        return f"Log: {fuelEntry_list.index(self)} \nGallons of Fuel: {self.gallons}\nTotal Cost of Fuel: {self.totalCost}\nOdometer Reading: {self.odometer_Reading}\n\n"
+        return f"Log: {(fuelEntry_list.index(self)+1)} \nGallons of Fuel: {self.gallons}\nTotal Cost of Fuel: {self.totalCost}\nOdometer Reading: {self.odometer_Reading}\n\n"
     
 fuelEntry_list = []
 
