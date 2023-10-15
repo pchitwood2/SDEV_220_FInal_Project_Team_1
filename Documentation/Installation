@@ -1,6 +1,7 @@
 Provide Installation instructions here for VTrack.
-1.
-2.
-3.
-4.
-5.
+1.Install all of the files that is inside of the folder called "Src".
+2.After Installing the files, open your preferred code interface (Ex PyCharm,CMD,Visual Studio Code)
+3.Open the file called "Maintenance_log_interface.py"
+4.Run the code 
+5.A pop up window of the app should show up.
+6.Enjoy VTrack!
