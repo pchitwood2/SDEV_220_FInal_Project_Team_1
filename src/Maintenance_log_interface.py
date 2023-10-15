@@ -136,7 +136,7 @@ def add_vehicle_button():
 maintenance_frame = Frame(root, width=450, height=370)
 maintenance_frame.pack_forget()
 
-maintenance_header = Label(text='Maintenance Log', font=30)  # Maintenance Log Header
+maintenance_header = Label(text='Maintenance Log Entry', font=30)  # Maintenance Log Header
 maintenance_header.pack_forget()
 
 
@@ -169,7 +169,7 @@ service_odometer_reading_entry.pack_forget()
 fuel_log_frame = Frame(root, width=450, height=370)
 fuel_log_frame.pack_forget()
 
-fuel_header = Label(text='Fuel Log', font=30)  # Fuel Log Header
+fuel_header = Label(text='Fuel Log Entry', font=30)  # Fuel Log Header
 fuel_header.pack_forget()
 
 
